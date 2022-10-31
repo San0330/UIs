@@ -1,0 +1,21 @@
+{
+    "name": "lms_elemes",
+    "version": "1.0.0",
+    "description": "UI/UX design for LMS",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "build": "npx tailwindcss -i ./src/style.css -o ./dist/style.css",
+        "build:watch": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch"
+    },
+    "keywords": [
+        "UI/UX",
+        "tailwind",
+        "frontend"
+    ],
+    "author": "Santosh Neupane",
+    "license": "ISC",
+    "devDependencies": {
+        "tailwindcss": "^3.2.1"
+    }
+}
