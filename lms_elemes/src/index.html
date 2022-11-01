@@ -9,18 +9,68 @@
 </head>
 
 <body>
-    <nav class='flex justify-between py-5 px-8 items-center'>
-        <div class='text-primary font-bold uppercase tracking-wider text-xl italic'>
-            Elemes
+    <aside class='absolute top-0 left-0 py-6 border-r border-gray-200 h-screen w-64'>
+
+        <div class='inline text-primary font-bold uppercase py-1 tracking-wider text-2xl italic'
+            style="background-color:hsl(230deg 43% 97%);">
+            <span class='relative left-12'>
+                Elemes
+            </span>
         </div>
 
-        <div class='text-gray-900 flex'>
+        <nav class='mt-12'>
+            <ul class='flex flex-col'>
+                <li class='pl-10 py-2 flex gap-3 border-l-4 border-primary hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                    <img src="../public/images/bell.svg" alt="" height='20px' width='20px'>
+                    <span> Dashboard <span>
+                </li>
+            </ul>
+        </nav>
+
+        <div class='mt-36'>
+            <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                <img src="../public/images/down.svg" alt="" height='20px' width='20px'>
+                <span> Logout <span>
+        </div>
+        </div>
+
+    </aside>
+
+    <main class='relative flex justify-between py-5 px-8 items-center ml-64 border-b border-gray-200'>
+        <div class='absolute -left-3 -bottom-3'>
+            <img src="../public/images/chevron-left.svg" alt="close sidebar">
+        </div>
+        <div class=' text-gray-900 flex'>
             <img src="../public/images/search2.svg" alt="search" height='20px' width='20px'>
             <input type="text" class='focus:outline-none focus:border-b border-gray-300 placeholder-gray-400 py-1 px-2'
                 placeholder='Search anything here...' />
         </div>
 
-        <div class='flex justify-between items-center'>
+        <div class='flex items-center'>
             <div class='relative'>
                 <div class='bg-red-500 rounded-full absolute top-0 right-2 h-2 w-2 border border-white'>
                 </div>
@@ -30,7 +80,7 @@
             <div class='mx-2'>Santosh N</div>
             <img src="../public/images/down.svg" alt="down" height='20px' width='20px'>
         </div>
-    </nav>
+    </main>
 </body>
 
 </html>
