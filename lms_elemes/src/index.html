@@ -382,7 +382,7 @@
             </div>
         </div>
         <div class='my-5 mx-8'>
-            <canvas id="canvas" width="285" height="180" class='border border-gray-200'>
+            <canvas id="canvas" width="170" height="80">
                 GPA rainbow meter
             </canvas>
         </div>
@@ -394,24 +394,24 @@
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d')
 
-        let x = 180;
-        let y = 150;
+        let x = 80;
+        let y = 85;
 
-        let radius = 100
+        let radius = 70
 
+        let gpa = 2.5
+        gpa = Math.min(4, gpa)
         let minDegree = 0;
-        let gpa = 3.5
         let maxDegree = (gpa * 45)
 
         let maxDegreeInradian = (maxDegree * Math.PI) / 180
         let minDegreeInradian = (minDegree * Math.PI) / 180
 
-        let arr = []
+        let px, py
 
-        for (let i = minDegreeInradian; i < maxDegreeInradian; i += 0.01) {
-            arr.push(i)
-            let px = x - radius * Math.sin(i);
-            let py = y - radius * Math.cos(i);
+        for (let i = minDegreeInradian; i < maxDegreeInradian; i += 0.03) {
+            px = x - radius * Math.sin(i);
+            py = y - radius * Math.cos(i);
 
             let hueValue = ((i * 180) / Math.PI)
 
@@ -425,8 +425,28 @@
             ctx.fill()
         }
 
-        console.log(arr.length)
+        ctx.save()
 
+        ctx.beginPath()
+        ctx.font = '36px serif';
+        ctx.textAlign = "center";
+        ctx.fillStyle = '#6100b6'
+        ctx.fillText(gpa.toString(), y, x - 10);
+
+        ctx.restore()
+
+        ctx.beginPath()
+        ctx.translate(y, x); // translate context to center of rainbow circle
+        ctx.rotate(maxDegreeInradian); // rotate upto max rotation from center of rainbow circle
+        ctx.translate(-y, -x); // translate context back
+
+        let rectHeight = 7
+        let rectWidth = 20
+
+        ctx.rect(y - radius - (rectWidth / 2), x - (rectHeight / 2), rectWidth, rectHeight);
+
+        ctx.stroke();
+        ctx.fill()
     }
 
     draw()
