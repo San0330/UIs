@@ -356,7 +356,7 @@
                 <!-- Forum Activity - 1 -->
                 <div class="py-5 gap-y-3" style="display: grid;grid-template-columns: 1fr 4fr 1fr;">
                     <img src="../public/images/user.jpg" alt="user" class='w-6 h-6 rounded-full justify-self-start'>
-                    <p class='text-xs text-gray-400 max-w-prose'> What is the difference between Saw and S ...</p>
+                    <p class='text-xs text-gray-500 max-w-prose'> What is the difference between Saw and S ...</p>
                     <div class='text-xs text-gray-500'>3:15PM</div>
                     <div class='col-start-2 col-end-3 text-xs font-medium text-gray-600'>Alex Ben</div>
                 </div>
@@ -365,7 +365,7 @@
                 <!-- Forum Activity - 2 -->
                 <div class="py-5 gap-y-2" style="display: grid;grid-template-columns: 1fr 4fr 1fr;">
                     <img src="../public/images/user.jpg" alt="user" class='w-6 h-6 rounded-full justify-self-start'>
-                    <p class='text-xs text-gray-400 max-w-prose'> What is the difference between Saw and S ...</p>
+                    <p class='text-xs text-gray-500 max-w-prose'> What is the difference between Saw and S ...</p>
                     <div class='text-xs text-gray-500'>3:15PM</div>
                     <div class='col-start-2 col-end-3 text-xs font-medium text-gray-600'>Alex Ben</div>
                 </div>
@@ -374,13 +374,62 @@
                 <!-- Forum Activity - 3 -->
                 <div class="py-5 gap-y-2" style="display: grid;grid-template-columns: 1fr 4fr 1fr;">
                     <img src="../public/images/user.jpg" alt="user" class='w-6 h-6 rounded-full justify-self-start'>
-                    <p class='text-xs text-gray-400 max-w-prose'> What is the difference between Saw and S ...</p>
+                    <p class='text-xs text-gray-500 max-w-prose'> What is the difference between Saw and S ...</p>
                     <div class='text-xs text-gray-500'>3:15PM</div>
                     <div class='col-start-2 col-end-3 text-xs font-medium text-gray-600'>Alex Ben</div>
                 </div>
                 <div class='h-[2px] bg-gray-100 ml-auto -mr-5'></div>
             </div>
+        </div>
+        <div class='my-5 mx-8'>
+            <canvas id="canvas" width="285" height="180" class='border border-gray-200'>
+                GPA rainbow meter
+            </canvas>
+        </div>
     </main>
 </body>
+
+<script>
+    function draw() {
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d')
+
+        let x = 180;
+        let y = 150;
+
+        let radius = 100
+
+        let minDegree = 0;
+        let gpa = 3.5
+        let maxDegree = (gpa * 45)
+
+        let maxDegreeInradian = (maxDegree * Math.PI) / 180
+        let minDegreeInradian = (minDegree * Math.PI) / 180
+
+        let arr = []
+
+        for (let i = minDegreeInradian; i < maxDegreeInradian; i += 0.01) {
+            arr.push(i)
+            let px = x - radius * Math.sin(i);
+            let py = y - radius * Math.cos(i);
+
+            let hueValue = ((i * 180) / Math.PI)
+
+            let color = `hsl(${hueValue}, 50%, 50%)`
+
+            ctx.beginPath()
+            ctx.arc(py, px, 4, 0, Math.PI * 2, true);
+            ctx.strokeStyle = color
+            ctx.fillStyle = color;
+            ctx.stroke();
+            ctx.fill()
+        }
+
+        console.log(arr.length)
+
+    }
+
+    draw()
+</script>
 
 </html>
