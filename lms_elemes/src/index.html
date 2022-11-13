@@ -13,7 +13,7 @@
 <body>
 
     <!-- Sidebar -->
-    <aside class='absolute top-0 left-0 py-6 border-r border-gray-200 h-screen w-64'>
+    <aside class='fixed top-0 left-0 py-6 border-r border-gray-200 h-screen w-64'>
         <!-- Title -->
         <div class='inline text-primary font-bold uppercase py-1 tracking-wider text-2xl italic'
             style="background-color:hsl(230deg 43% 97%);">
@@ -51,18 +51,16 @@
                     <my-icons name='book'></my-icons>
                     <span> Library </span>
                 </li>
-
                 <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
                     <my-icons name='wrench'></my-icons>
                     <span> Services </span>
                 </li>
-
             </ul>
         </nav>
         <!-- Navigation End -->
 
         <!-- Logout Button -->
-        <div class='mt-36'>
+        <div class='mt-40'>
             <div class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
                 <my-icons name='logout'></my-icons>
                 <span> Logout </span>
@@ -78,6 +76,7 @@
 
         <!-- Top Section -->
         <div class='relative flex justify-between py-5 px-8 items-center border-b border-gray-200'>
+
             <!-- Chevron Close Button -->
             <div class='absolute -left-3 -bottom-3'>
                 <img src="../public/images/chevron-left.svg" alt="close sidebar">
@@ -150,7 +149,7 @@
                 <div class='flex gap-4 items-center mb-4'>
                     <my-icons name='calendar'></my-icons>
                     <div class='grow text-sm font-medium'>Forum Activity</div>
-                    <my-icons name='right-arrow'></my-icons>
+                    <my-icons class='text-primary' name='right-arrow'></my-icons>
                 </div>
 
                 <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
@@ -160,10 +159,46 @@
             </div>
         </div>
 
-        <div class='my-5 mx-8'>
-            <canvas id="canvas" width="170" height="80">
-                GPA rainbow meter
-            </canvas>
+        <div class='flex gap-8 my-5 mx-8'>
+            <!-- GPA meter -->
+            <div class='border border-gray-200 rounded'>
+                <div class='border-b border-gray-200 pt-5 px-8'>
+                    <div class='flex items-center gap-2 text-sm pb-5'>
+                        <my-icons name='dashboard-meter'></my-icons>
+                        <p>GPA</p>
+                    </div>
+                    <canvas id="canvas" width="180" height="80">
+                        GPA rainbow meter
+                    </canvas>
+                </div>
+                <div class='flex items-center py-2 w-[170px] mx-auto justify-between'>
+                    <p>&#128543;</p>
+                    <p class='text-center text-sm'>Keep it up!</p>
+                    <p>&#128522;</p>
+                </div>
+            </div>
+            <!-- GPA meter End -->
+
+            <!-- Attendance -->
+            <div class='border border-gray-200 rounded'>
+                <div class='border-b border-gray-200 pt-5 px-8'>
+                    <div class='flex items-center gap-2 text-sm pb-5'>
+                        <my-icons name='man'></my-icons>
+                        <p class='grow'>Attendance</p>
+                        <my-icons class='text-primary' name='right-arrow'></my-icons>
+                    </div>
+                    <div class='flex items-center justify-center h-[80px] w-[180px]'>
+                        <p class='text-primary text-center text-5xl'>
+                            64
+                        </p>
+                    </div>
+                </div>
+                <div class='py-2 w-[170px] mx-auto'>
+                    <p class='text-center text-sm'>Total Sessions Done</p>
+                </div>
+            </div>
+            <!-- Attendance End -->
+
         </div>
     </main>
 </body>

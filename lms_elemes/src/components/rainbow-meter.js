@@ -3,11 +3,11 @@ function draw() {
     const ctx = canvas.getContext('2d')
 
     let x = 80;
-    let y = 85;
+    let y = 90;
 
-    let radius = 70
+    let radius = 75
 
-    let gpa = 2.5
+    let gpa = 3.5
     gpa = Math.min(4, gpa)
     let minDegree = 0;
     let maxDegree = (gpa * 45)
