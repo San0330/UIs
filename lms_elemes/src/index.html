@@ -8,199 +8,235 @@
     <link href="../dist/style.css" rel="stylesheet">
     <script src="components/component.js" type="text/javascript" defer></script>
     <script src="components/icons.js" type="text/javascript" defer></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
+    <div class='max-w-[1440px] mx-auto relative'>
+        <!-- Sidebar -->
+        <aside class='fixed flex flex-col py-6 border-r border-gray-200 h-screen w-64'>
+            <!-- Title -->
+            <div class='flex-initial w-24 text-primary font-bold uppercase py-1 tracking-wider text-2xl italic'
+                style="background-color:hsl(230deg 43% 97%);">
+                <span class='relative left-12'>
+                    Elemes
+                </span>
+            </div>
+            <!-- Titie End -->
 
-    <!-- Sidebar -->
-    <aside class='fixed top-0 left-0 py-6 border-r border-gray-200 h-screen w-64'>
-        <!-- Title -->
-        <div class='inline text-primary font-bold uppercase py-1 tracking-wider text-2xl italic'
-            style="background-color:hsl(230deg 43% 97%);">
-            <span class='relative left-12'>
-                Elemes
-            </span>
-        </div>
-        <!-- Titie End -->
+            <!-- Navigations -->
+            <nav class='mt-12 grow'>
+                <ul class='flex flex-col'>
+                    <li
+                        class='pl-10 py-2 flex items-center gap-3 text-primary border-l-4 border-primary hover:cursor-pointer'>
+                        <my-icons name='dashboard'></my-icons>
+                        <span> Dashboard </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='open-book'></my-icons>
+                        <span> Courses </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='calendar'></my-icons>
+                        <span> Schedule </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='forum'></my-icons>
+                        <span> Forum </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='score'></my-icons>
+                        <span> Score </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='book'></my-icons>
+                        <span> Library </span>
+                    </li>
+                    <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
+                        <my-icons name='wrench'></my-icons>
+                        <span> Services </span>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Navigation End -->
 
-        <!-- Navigations -->
-        <nav class='mt-12'>
-            <ul class='flex flex-col'>
-                <li
-                    class='pl-10 py-2 flex items-center gap-3 text-primary border-l-4 border-primary hover:cursor-pointer'>
-                    <my-icons name='dashboard'></my-icons>
-                    <span> Dashboard </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='open-book'></my-icons>
-                    <span> Courses </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='calendar'></my-icons>
-                    <span> Schedule </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='forum'></my-icons>
-                    <span> Forum </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='score'></my-icons>
-                    <span> Score </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='book'></my-icons>
-                    <span> Library </span>
-                </li>
-                <li class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
-                    <my-icons name='wrench'></my-icons>
-                    <span> Services </span>
-                </li>
-            </ul>
-        </nav>
-        <!-- Navigation End -->
-
-        <!-- Logout Button -->
-        <div class='mt-40'>
+            <!-- Logout Button -->
             <div class='pl-10 py-3 flex gap-3 border border-l-4 border-transparent hover:cursor-pointer'>
                 <my-icons name='logout'></my-icons>
                 <span> Logout </span>
             </div>
-        </div>
-        <!-- Logout Button End -->
+            <!-- Logout Button End -->
 
-    </aside>
-    <!-- Sidebar End -->
+        </aside>
+        <!-- Sidebar End -->
 
-    <!-- Main Section -->
-    <main class='ml-64'>
+        <!-- Main Section -->
+        <main class='ml-64'>
 
-        <!-- Top Section -->
-        <div class='relative flex justify-between py-5 px-8 items-center border-b border-gray-200'>
+            <!-- Top Section -->
+            <div class='sticky top-0 bg-white flex py-3 px-8 items-center border-b border-gray-200'>
 
-            <!-- Chevron Close Button -->
-            <div class='absolute -left-3 -bottom-3'>
-                <img src="../public/images/chevron-left.svg" alt="close sidebar">
-            </div>
-            <!-- Chevron Close Button End -->
-
-            <!-- Search Input -->
-            <div class='text-gray-900 flex'>
-                <img src="../public/images/search2.svg" alt="search" height='20px' width='20px'>
-                <input type="text"
-                    class='focus:outline-none focus:border-b border-gray-300 placeholder-gray-400 py-1 px-2'
-                    placeholder='Search anything here...' />
-            </div>
-            <!-- Search Input End -->
-
-            <!-- Profile & Notification Icons -->
-            <div class='flex items-center'>
-                <div class='relative'>
-                    <div class='bg-red-500 rounded-full absolute top-0 right-2 h-2 w-2 border border-white'>
-                    </div>
-                    <img src="../public/images/bell.svg" class='mr-2' alt="search" height='20px' width='20px'>
+                <!-- Chevron Close Button -->
+                <div class='absolute -left-3 -bottom-3'>
+                    <img src="../public/images/chevron-left.svg" alt="close sidebar">
                 </div>
-                <img src="../public/images/user.jpg" class='rounded-full m-2' alt="search" height='30px' width='30px'>
-                <div class='mx-2'>Jenifer L</div>
-                <img src="../public/images/down.svg" alt="down" height='20px' width='20px'>
-            </div>
-            <!-- Profile & Notification Icons End -->
-        </div>
+                <!-- Chevron Close Button End -->
 
-        <!-- Mid & right section -->
-        <div class='flex mt-10 mx-8 gap-8'>
-            <div class='bg-primary p-5'>
-                <div class="flex justify-between mb-5 text-white">
+                <!-- Search Input -->
+                <div class='text-gray-900 flex grow'>
+                    <img src="../public/images/search2.svg" alt="search" height='20px' width='20px'>
+                    <input type="text"
+                        class='focus:outline-none border-gray-300 placeholder-gray-400 py-1 pl-3 pr-5 grow'
+                        placeholder='Search anything here...' />
+                </div>
+                <!-- Search Input End -->
 
-                    <!-- Title -->
-                    <div class='flex items-center gap-3'>
-                        <my-icons name='open-book'></my-icons>
-                        <span>My Courses</span>
+                <!-- Profile & Notification Icons -->
+                <div class='flex items-center'>
+                    <div class='relative'>
+                        <div class='bg-red-500 rounded-full absolute top-0 right-2 h-2 w-2 border border-white'>
+                        </div>
+                        <img src="../public/images/bell.svg" class='mr-2' alt="search" height='20px' width='20px'>
                     </div>
-                    <!-- Title End -->
+                    <img src="../public/images/user.jpg" class='rounded-full m-2' alt="search" height='30px'
+                        width='30px'>
+                    <div class='mx-2'>Jenifer L</div>
+                    <img src="../public/images/down.svg" alt="down" height='20px' width='20px'>
+                </div>
+                <!-- Profile & Notification Icons End -->
+            </div>
 
-                    <!-- Icons -->
+            <!-- Mid & right section -->
+            <div class='flex mt-8 mx-8 gap-8'>
+                <div class='bg-primary p-5'>
+                    <div class="flex justify-between mb-5 text-white">
+
+                        <!-- Title -->
+                        <div class='flex items-center gap-3'>
+                            <my-icons name='open-book'></my-icons>
+                            <span>My Courses</span>
+                        </div>
+                        <!-- Title End -->
+
+                        <!-- Icons -->
+                        <div class='flex gap-3'>
+                            <span class='text-white/25'>
+                                <my-icons name='chevron-left'></my-icons>
+                            </span>
+                            <my-icons name='chevron-right'></my-icons>
+                        </div>
+                        <!-- Icons End -->
+
+                    </div>
+
+                    <!-- Courses List -->
                     <div class='flex gap-3'>
-                        <span class='text-white/25'>
-                            <my-icons name='chevron-left'></my-icons>
-                        </span>
-                        <my-icons name='chevron-right'></my-icons>
+
+                        <my-course courseName='Law Class' courseImage='../public/images/balance.png' progress='80'
+                            name='Gut Alexen'></my-course>
+
+                        <my-course courseName='Politics Class' courseImage='../public/images/political-science.png'
+                            progress='70' name='Ramriez Huts'></my-course>
+
+                        <my-course courseName='English Class' courseImage='../public/images/book.png' progress='90'
+                            name='Ram Alexen'></my-course>
+
                     </div>
-                    <!-- Icons End -->
-
                 </div>
 
-                <!-- Courses List -->
-                <div class='flex gap-3'>
+                <div class='p-5 border border-gray-200 overflow-scroll h-[384px]'>
 
-                    <my-course courseName='Law Class' courseImage='../public/images/balance.png' progress='80'
-                        name='Gut Alexen'></my-course>
-
-                    <my-course courseName='Politics Class' courseImage='../public/images/political-science.png'
-                        progress='70' name='Ramriez Huts'></my-course>
-
-                    <my-course courseName='English Class' courseImage='../public/images/book.png' progress='90'
-                        name='Ram Alexen'></my-course>
-
-                </div>
-            </div>
-
-            <div class='p-5 border border-gray-200'>
-
-                <div class='flex gap-4 items-center mb-4'>
-                    <my-icons name='calendar'></my-icons>
-                    <div class='grow text-sm font-medium'>Forum Activity</div>
-                    <my-icons class='text-primary' name='right-arrow'></my-icons>
-                </div>
-
-                <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
-                <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
-                <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
-
-            </div>
-        </div>
-
-        <div class='flex gap-8 my-5 mx-8'>
-            <!-- GPA meter -->
-            <div class='border border-gray-200 rounded'>
-                <div class='border-b border-gray-200 pt-5 px-8'>
-                    <div class='flex items-center gap-2 text-sm pb-5'>
-                        <my-icons name='dashboard-meter'></my-icons>
-                        <p>GPA</p>
-                    </div>
-                    <canvas id="canvas" width="180" height="80">
-                        GPA rainbow meter
-                    </canvas>
-                </div>
-                <div class='flex items-center py-2 w-[170px] mx-auto justify-between'>
-                    <p>&#128543;</p>
-                    <p class='text-center text-sm'>Keep it up!</p>
-                    <p>&#128522;</p>
-                </div>
-            </div>
-            <!-- GPA meter End -->
-
-            <!-- Attendance -->
-            <div class='border border-gray-200 rounded'>
-                <div class='border-b border-gray-200 pt-5 px-8'>
-                    <div class='flex items-center gap-2 text-sm pb-5'>
-                        <my-icons name='man'></my-icons>
-                        <p class='grow'>Attendance</p>
+                    <div class='flex gap-4 items-center mb-4'>
+                        <my-icons name='calendar'></my-icons>
+                        <div class='grow text-sm font-medium'>Forum Activity</div>
                         <my-icons class='text-primary' name='right-arrow'></my-icons>
                     </div>
-                    <div class='flex items-center justify-center h-[80px] w-[180px]'>
-                        <p class='text-primary text-center text-5xl'>
-                            64
-                        </p>
-                    </div>
-                </div>
-                <div class='py-2 w-[170px] mx-auto'>
-                    <p class='text-center text-sm'>Total Sessions Done</p>
+
+                    <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
+                    <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
+                    <forum-activity name='Alex Ben' image='../public/images/user.jpg'> </forum-activity>
+
                 </div>
             </div>
-            <!-- Attendance End -->
 
-        </div>
-    </main>
+            <div class='flex gap-8 my-5 mx-8'>
+                <!-- GPA meter -->
+                <div class='border border-gray-200 rounded'>
+                    <div class='border-b border-gray-200 pt-5 px-8'>
+                        <div class='flex items-center gap-2 text-sm pb-5'>
+                            <my-icons name='dashboard-meter'></my-icons>
+                            <p>GPA</p>
+                        </div>
+                        <canvas id="canvas" width="180" height="80">
+                            GPA rainbow meter
+                        </canvas>
+                    </div>
+                    <div class='flex items-center py-2 w-[170px] mx-auto justify-between'>
+                        <p>&#128543;</p>
+                        <p class='text-center text-sm'>Keep it up!</p>
+                        <p>&#128522;</p>
+                    </div>
+                </div>
+                <!-- GPA meter End -->
+
+                <!-- Attendance -->
+                <div class='border border-gray-200 rounded'>
+                    <div class='border-b border-gray-200 pt-5 px-8'>
+                        <div class='flex items-center gap-2 text-sm pb-5'>
+                            <my-icons name='man'></my-icons>
+                            <p class='grow'>Attendance</p>
+                            <my-icons class='text-primary' name='right-arrow'></my-icons>
+                        </div>
+                        <div class='flex items-center justify-center h-[80px] w-[180px]'>
+                            <p class='text-primary text-center text-5xl'>
+                                64
+                            </p>
+                        </div>
+                    </div>
+                    <div class='py-2 w-[170px] mx-auto'>
+                        <p class='text-center text-sm'>Total Sessions Done</p>
+                    </div>
+                </div>
+                <!-- Attendance End -->
+
+                <!-- Upcoming Agenda -->
+                <div class='grow border border-gray-200 overflow-hidden rounded'>
+                    <div class='pt-5 px-8'>
+                        <div class='flex items-center gap-2 text-sm pb-5'>
+                            <my-icons name='calendar'></my-icons>
+                            <p class='grow'>Upcoming Agenda</p>
+                            <my-icons class='text-gray-400' name='chevron-left'></my-icons>
+                            <my-icons class='text-primary' name='chevron-right'></my-icons>
+                        </div>
+                        <div class='flex gap-5'>
+                            <div class='flex flex-none w-64 rounded bg-[#f7f7f7]'>
+                                <div class='flex flex-col gap-3 px-5 py-3'>
+                                    <div class='inline-flex gap-3'>
+                                        <my-icons name='camera'></my-icons>
+                                        <p class='text-sm'>Zoom Session</p>
+                                    </div>
+                                    <p>Law Class</p>
+                                    <p class='text-sm text-gray-400'>25 August 2022 . 7:00 - 9:00 PM</p>
+                                </div>
+                            </div>
+                            <div class='flex flex-none w-64 rounded bg-[#f7f7f7]'>
+                                <div class='flex flex-col gap-3 px-5 py-3'>
+                                    <div class='inline-flex gap-3'>
+                                        <my-icons name='message'></my-icons>
+                                        <p class='text-sm'>Quiz</p>
+                                    </div>
+                                    <p>Politics Class</p>
+                                    <p class='text-sm text-gray-400'>25 August 2022 . 9:00 - 10:00 PM</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Upcoming Agenda End -->
+
+            </div>
+        </main>
+    </div>
 </body>
 
 <script src="components/rainbow-meter.js" type="text/javascript"></script>
