@@ -28,11 +28,8 @@ customElements.define('my-course', class extends HTMLElement {
         let name = this.getAttribute('name')
         let progress = parseInt(this.getAttribute('progress'))
 
-        let progressSize = (180 * progress) / 100;
-        progressSize = parseInt(progressSize);
-
         this.innerHTML = `
-            <div class='bg-white/25'>
+            <div class='bg-white/25 text-sm lg:text-base'>
                 <div class="upperSection p-5 border-white/30 border-b ">
                     <img src="${courseImage}" alt="balance" class='h-10 w-10 mb-3' />
                     <div class='text-white text-xl mb-5'>
@@ -46,10 +43,10 @@ customElements.define('my-course', class extends HTMLElement {
                         </div>
                     </div>
                 </div>
-                <div class="lowerSection p-5 text-white">
+                <div class="lowerSection p-5 text-white text-sm lg:text-base">
                     <div class='mb-3'>
-                        <div class='h-1 bg-white/30 rounded overflow-hidden' style="width:180px">
-                            <div class='h-1 bg-yellow-300' style="width:${progressSize}px">
+                        <div class='h-1 bg-white/30 rounded overflow-hidden w-[140px] lg:w-[180px]'>
+                            <div class='h-1 bg-yellow-300 w-[${progress}%]'>
                             </div>
                         </div>
                     </div>
