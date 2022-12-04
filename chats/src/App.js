@@ -1,13 +1,14 @@
-import Sidenav from "./components/sidenav";
+import Sidenav from "./components/Sidenav";
+import ChatUsers from "./components/ChatUser";
 
 function App() {
     return (
         <div className='flex flex-row'>
-            <div className='flex-1 bg-gray-400'>
+            <div className='shrink'>
                 <Sidenav />
             </div>
-            <div className='flex-3 bg-red-400'>
-                Chat Users List
+            <div className='flex-3'>
+                <ChatUsers />
             </div>
             <div className='flex-9 bg-blue-400'>
                 Chats
