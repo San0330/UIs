@@ -9,6 +9,11 @@ const Icons = ({ name, active = false, size = 'md' }) => {
         width = '25px'
     }
 
+    if (size === 'xs') {
+        height = '18px'
+        width = '18px'
+    }
+
     switch (name) {
         case 'window':
             icon = <svg className='mx-auto' width={`${width}`} height={`${height}`} viewBox="0 0 64 64" fill='currentColor' stroke='currentColor'><g id="Layer_17" data-name="Layer 17"><path d="M52,32.75H34.25a1.5,1.5,0,0,0-1.5,1.5V52a1.5,1.5,0,0,0,1.5,1.5H48.62a4.89,4.89,0,0,0,4.88-4.88V34.25A1.5,1.5,0,0,0,52,32.75ZM50.5,48.62a1.88,1.88,0,0,1-1.88,1.88H35.75V35.75H50.5Z" /><path d="M48.62,10.5H34.25a1.5,1.5,0,0,0-1.5,1.5V29.75a1.5,1.5,0,0,0,1.5,1.5H52a1.5,1.5,0,0,0,1.5-1.5V15.38A4.89,4.89,0,0,0,48.62,10.5ZM50.5,28.25H35.75V13.5H48.62a1.88,1.88,0,0,1,1.88,1.88Z" /><path d="M29.75,32.75H12a1.5,1.5,0,0,0-1.5,1.5V48.62a4.89,4.89,0,0,0,4.88,4.88H29.75a1.5,1.5,0,0,0,1.5-1.5V34.25A1.5,1.5,0,0,0,29.75,32.75ZM28.25,50.5H15.38a1.88,1.88,0,0,1-1.88-1.88V35.75H28.25Z" /><path d="M29.75,10.5H15.38a4.89,4.89,0,0,0-4.88,4.88V29.75a1.5,1.5,0,0,0,1.5,1.5H29.75a1.5,1.5,0,0,0,1.5-1.5V12A1.5,1.5,0,0,0,29.75,10.5Zm-1.5,17.75H13.5V15.38a1.88,1.88,0,0,1,1.88-1.88H28.25Z" /></g></svg>
@@ -17,7 +22,7 @@ const Icons = ({ name, active = false, size = 'md' }) => {
             icon = <svg className='mx-auto' width={`${width}`} height={`${height}`} viewBox="0 0 50 50" fill="currentColor"><path d="M 25 2 C 12.347656 2 2 11.597656 2 23.5 C 2 30.007813 5.132813 35.785156 10 39.71875 L 10 48.65625 L 11.46875 47.875 L 18.6875 44.125 C 20.703125 44.664063 22.800781 45 25 45 C 37.652344 45 48 35.402344 48 23.5 C 48 11.597656 37.652344 2 25 2 Z M 25 4 C 36.644531 4 46 12.757813 46 23.5 C 46 34.242188 36.644531 43 25 43 C 22.835938 43 20.742188 42.6875 18.78125 42.125 L 18.40625 42.03125 L 18.0625 42.21875 L 12 45.375 L 12 38.8125 L 11.625 38.53125 C 6.960938 34.941406 4 29.539063 4 23.5 C 4 12.757813 13.355469 4 25 4 Z M 22.71875 17.71875 L 10.6875 30.46875 L 21.5 24.40625 L 27.28125 30.59375 L 39.15625 17.71875 L 28.625 23.625 Z" /></svg>;
             break;
         case 'search':
-            icon = <svg className='mx-auto' width={`${width}`} height={`${height}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
+            icon = <svg className='mx-auto' width={`${width}`} height={`${height}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
             break;
         case 'message':
             icon = <svg className='mx-auto' width={`${width}`} height={`${height}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" /></svg>
@@ -40,6 +45,11 @@ const Icons = ({ name, active = false, size = 'md' }) => {
                     <g>
                     </g>
                 </svg>
+            )
+            break;
+        case 'pinned':
+            icon = (
+                <svg fill='currentColor' width={`${width}`} height={`${height}`} id="Layer_1" data-name="Layer 1" viewBox="0 0 25 25"><title>Pin</title><path id="Pin" d="M24.85,9.53,15.47.15a.5.5,0,0,0-.71,0l-.22.22A3.49,3.49,0,0,0,13.73,4l-5,5a6.62,6.62,0,0,0-7.31,1.39l-.17.17a.5.5,0,0,0,0,.71l5.89,5.89-7,7a.5.5,0,1,0,.71.71l7-7,5.89,5.89a.5.5,0,0,0,.71,0l.17-.17A6.62,6.62,0,0,0,16,16.3l5-5a3.45,3.45,0,0,0,3.63-.82l.22-.22A.5.5,0,0,0,24.85,9.53Z" /></svg>
             )
             break;
         default:
