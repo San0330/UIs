@@ -1,66 +1,52 @@
 import Icons from './Icons'
+import MessageDetail from './MessageDetail'
 
 const ChatUsers = () => {
     return (
-        <div className='flex flex-col px-8'>
+        <div className='flex flex-col px-8 h-screen overflow-scroll'>
+
             <div className='flex flex-row items-center mx-auto justify-between w-full pt-5'>
                 <span className='text-3xl font-bold'>Messages</span>
                 <div className='text-primary'>
                     <Icons size='sm' />
                 </div>
             </div>
+
             <div className='flex gap-3 items-center bg-gray-200 text-gray-500 mt-5 px-5 py-3 rounded-md'>
                 <Icons name='search' size='sm' />
                 <input type='text' placeholder='Search ...' className='bg-gray-200' />
             </div>
 
-            <div className='flex justify-start items-center mt-5 gap-3 text-gray-400 w-auto'>
-                <div className='shrink'>
-                    <Icons name='pinned' size='xs' />
-                </div>
-                <p className='font-semibold uppercase'>Pinned</p>
-            </div>
+            <CategoryTitle title='Pinned'>
+                <Icons name='pinned' size='xs' />
+            </CategoryTitle>
 
-            <div className='flex py-5'>
-                <div className='flex-1 relative mr-5'>
-                    <img src='images/user.jpg' alt='user' className='rounded-full mx-auto object-contain h-14 w-14' />
-                    <div className="bg-green-500 border-white h-2 w-2 rounded-full absolute bottom-1 right-2"></div>
-                </div>
-                <div className='flex-3 flex flex-col'>
-                    <div className='font-semibold text-lg'>Santosh Neupane</div>
-                    <div>Santosh Neupane</div>
-                </div>
-                <div className='flex-1'>
-                    <p>4:30 PM</p>
-                    <div className='rounded-full bg-red-500 text-white text-center h-6 w-6 ml-auto'>
-                        <div>9+</div>
-                    </div>
-                </div>
-            </div>
 
-            <div className='flex py-5 gap-1'>
-                <div className='flex-1'>
-                    <img src='images/user.jpg' alt='user' className='rounded-full mx-auto object-contain h-14 w-14' />
-                </div>
-                <div className='flex-3 flex flex-col'>
-                    <div className='font-semibold text-lg'>Santosh Neupane</div>
-                    <div className='text-green-500'>Typing...</div>
-                </div>
-                <div className='flex-1'>
-                    <p>4:30 PM</p>
-                    <div className='relative text-primary text-right'>
-                        <span>✓</span>
-                        <span className='absolute right-2'>✓</span>
-                    </div>
-                </div>
-            </div>
+            <MessageDetail name='Laxman Tharu 1' message='hello man' time='4:30 PM' isSent isOnline />
+            <MessageDetail name='Laxman Tharu 2' message='hello man how ' newMessageCount='2' time='4:30 PM' isTyping='false' />
+            <MessageDetail name='Laxman Tharu 3' message='do homework' newMessageCount='1' time='4:30 PM' isTyping='false' />
+            <MessageDetail name='Laxman Tharu 4' message='oky indso' time='4:30 PM' isSent='true' isOnline />
 
-            <div className='flex justify-start items-center mt-5 gap-3 text-gray-400 w-auto'>
-                <div className='shrink'>
-                    <Icons name='logo' size='xs' />
-                </div>
-                <p className='font-semibold uppercase'>All Message</p>
+
+            <CategoryTitle title='All Messages'>
+                <Icons name='logo' size='xs' />
+            </CategoryTitle>
+
+            <MessageDetail name='Laxman Tharu 1' message='hello man' time='4:30 PM' isSent isOnline />
+            <MessageDetail name='Laxman Tharu 2' message='hello man how ' newMessageCount='2' time='4:30 PM' isTyping='false' />
+            <MessageDetail name='Laxman Tharu 3' message='do homework' newMessageCount='1' time='4:30 PM' isTyping='false' />
+            <MessageDetail name='Laxman Tharu 4' message='oky indso' time='4:30 PM' isSent='true' isOnline />
+        </div>
+    )
+}
+
+const CategoryTitle = ({ title, children }) => {
+    return (
+        <div className='flex justify-start items-center mt-5 gap-3 text-gray-400 w-auto'>
+            <div className='shrink'>
+                {children}
             </div>
+            <p className='font-semibold uppercase'>{title}</p>
         </div>
     )
 }
